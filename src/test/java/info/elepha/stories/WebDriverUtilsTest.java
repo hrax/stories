@@ -1,6 +1,7 @@
 package info.elepha.stories;
 
 import static org.junit.Assert.assertTrue;
+import info.elepha.stories.listener.ScreenshotOnFailureListener;
 
 import java.io.File;
 import java.net.URL;

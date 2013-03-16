@@ -1,6 +1,8 @@
 package info.elepha.stories;
 
 import static org.junit.Assert.assertEquals;
+import info.elepha.stories.util.TestNGUtils;
+import info.elepha.stories.util.WebDriverUtils;
 
 import org.hamcrest.CoreMatchers;
 import org.junit.Assert;

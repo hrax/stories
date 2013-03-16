@@ -1,5 +1,7 @@
 package info.elepha.stories;
 
+import info.elepha.stories.util.WebDriverUtils;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -90,60 +92,70 @@ public class Story {
 	}
 	
 	/**
-	 * If given {@code by} is a text entry element (input or textarea), this will clear the value. Has no effect on other elements.
-	 * @param by the element selector
+	 * If given {@code selector} is a text entry element (input or textarea), this will clear the value. Has no effect on other elements.
+	 * @param selector the element selector
 	 * @return current Story
 	 */
-	public Story clear(By by) {
-		WebDriverUtils.clear(getDriver(), by);
+	public Story clear(By selector) {
+		WebDriverUtils.clear(getDriver(), selector);
 		return this;
 	}
 	
 	/**
-	 * Clicks on given {@code by}. If this causes to load new page, the method 
+	 * Clicks on given {@code selector}. If this causes to load new page, the method 
 	 * tries to block until the page is loaded, however it is recommended to  
 	 * call {@link #ready()} afterwards.
-	 * @param by the element selector
+	 * @param selector the element selector
 	 * @return current Story
 	 */
-	public Story click(By by) {
-		WebDriverUtils.click(getDriver(), by);
+	public Story click(By selector) {
+		WebDriverUtils.click(getDriver(), selector);
 		return this;
 	}
 	
 	/**
-	 * Use this method to simulate typing into a {@code by}, which may set its value.
-	 * @param by the element selector
+	 * Performs context click on given {@code selector}
+	 * @param selector the element selector
+	 * @return current Story
+	 */
+	public Story context(By selector) {
+		WebDriverUtils.context(getDriver(), selector);
+		return this;
+	}
+	
+	/**
+	 * Use this method to simulate typing into a {@code selector}, which may set its value.
+	 * @param selector the element selector
 	 * @param text the text to type
 	 * @return current Story
 	 */
-	public Story type(By by, CharSequence... text) {
-		WebDriverUtils.type(getDriver(), by);
+	public Story type(By selector, CharSequence... text) {
+		WebDriverUtils.type(getDriver(), selector);
 		return this;
 	}
 	
 	/**
-	 * If given {@code by} is a form, or an element within a form, then this will be submitted to
+	 * If given {@code selector} is a form, or an element within a form, then this will be submitted to
 	 * the remote server. If this causes the current page to change, then this method will block until
 	 * the new page is loaded.
-	 * @param by the element selector
+	 * @param selector the element selector
 	 * @return current Story
 	 */
-	public Story submit(By by) {
-		WebDriverUtils.submit(getDriver(), by);
+	public Story submit(By selector) {
+		WebDriverUtils.submit(getDriver(), selector);
 		return this;
 	}
 	
 	/**
-	 * Use this method to simulate typing into a {@code by} and if it is in form 
+	 * Use this method to simulate typing into a {@code selector} and if it is in form 
 	 * element submit it to the remote server. If this causes the current page 
 	 * to change, then this method will block until the new page is loaded. 
-	 * @param by the element selector
+	 * @param selector the element selector
 	 * @param text the text to type
 	 * @return current Story
 	 */
-	public Story typeAndSubmit(By by, CharSequence... text) {
-		return type(by, text).submit(by);
+	public Story typeAndSubmit(By selector, CharSequence... text) {
+		return type(selector, text).submit(selector);
 	}
 	
 	/**
@@ -187,12 +199,12 @@ public class Story {
 	}
 
 	/**
-	 * Switch story to frame with given {@code by}
-	 * @param by the frame element selector
+	 * Switch story to frame with given {@code selector}
+	 * @param selector the frame element selector
 	 * @return current Story
 	 */
-	public Story switchToFrame(By by) {
-		WebDriverUtils.switchToFrame(getDriver(), by);
+	public Story switchToFrame(By selector) {
+		WebDriverUtils.switchToFrame(getDriver(), selector);
 		return this;
 	}
 
