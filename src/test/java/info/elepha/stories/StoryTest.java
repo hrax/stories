@@ -18,6 +18,7 @@ import org.testng.annotations.Test;
 
 import com.google.common.base.Predicate;
 
+@SuppressWarnings ("javadoc")
 public class StoryTest {
 
 	private String parent;

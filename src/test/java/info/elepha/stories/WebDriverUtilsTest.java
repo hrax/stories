@@ -9,6 +9,7 @@ import java.net.URL;
 import org.junit.Test;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+@SuppressWarnings ("javadoc")
 public class WebDriverUtilsTest {
 
 	@Test

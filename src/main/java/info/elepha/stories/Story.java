@@ -161,7 +161,7 @@ public class Story {
 	/**
 	 * Wait until given {@code predicate} returns true
 	 * @param timeout the timeout for wait
-	 * @param p the predicate to run
+	 * @param predicate the predicate to run
 	 * @return current Story
 	 */
 	public Story wait(int timeout, Predicate<WebDriver> predicate) {
