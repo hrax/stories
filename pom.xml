@@ -24,4 +24,8 @@
 			<version>${version.testng}</version>
 		</dependency>
 	</dependencies>
+	<scm>
+		<url>scm:git:git://github.com/hrax/stories.git</url>
+		<developerConnection>scm:git:ssh://git@github.com:hrax/stories.git</developerConnection>
+	</scm>
 </project>
