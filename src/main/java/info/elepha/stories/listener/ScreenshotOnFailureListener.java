@@ -5,8 +5,17 @@ import info.elepha.stories.util.WebDriverUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.events.AbstractWebDriverEventListener;
 
+/**
+ * Webdriver listener to create screenshot on exception 
+ * @author Gregor "hrax" Magdolen
+ */
 public class ScreenshotOnFailureListener extends AbstractWebDriverEventListener {
 	private final String parent;
+	
+	/**
+	 * Create new listener with given {@code parent} as the root folder for 
+	 * storing screenshots
+	 */
 	public ScreenshotOnFailureListener(String parent) {
 		this.parent = parent;
 	}
