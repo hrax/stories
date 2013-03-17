@@ -7,6 +7,9 @@ The motion behind this project is to simplify writing of WebDriver tests. WebDri
 
 Tests are most of the time supplied in a form of a user story (sentence). This tools allows to rewrite the story into a test with necessity knowing only the selector of the element.
 
+Example
+-------
+
 A simple user story:
 
 > User John Doe enters administration site, logs in and publishes new article.
