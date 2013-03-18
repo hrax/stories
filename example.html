@@ -67,17 +67,17 @@
                 <ul class="nav nav-list">
                     <li class="nav-header">Overview</li>
                                 
-      <li class="active">
-    
-            <a href="#"><i class="none"></i>Introduction</a>
-          </li>
-                  
       <li>
     
-                          <a href="example.html" title="Example">
+                          <a href="index.html" title="Introduction">
           <i class="none"></i>
-        Example</a>
+        Introduction</a>
             </li>
+                  
+      <li class="active">
+    
+            <a href="#"><i class="none"></i>Example</a>
+          </li>
                   
       <li>
     
@@ -120,7 +120,22 @@
                 
         <div id="bodyColumn"  class="span9" >
                                   
-            <h1>Introduction</h1><p>Simple and easy way how to write WebDriver tests - with Stories!</p><p>The motion behind this project is to simplify writing of WebDriver tests. WebDriver itself is useful tool but most of the time it requires a lot of writing to perform simple operations.</p><p>Tests are most of the time supplied in a form of a user story (sentence). This tools allows to rewrite the story into a test with necessity knowing only the selector of the element.</p><h1>Who is this for?</h1><p>Everyone! Doesnt matter whether you are writing WebDriver tests for your self or enterprise you work for, Stories are meant to be enterprise ready.</p><p>In every enterprise there is a need to write own testing framework. By using stories, most of the time you will only need element selector to perform operations on. It is also expected everyone will need their special actions to be performed in their tests, which can now be done by implementing a simple interface.</p><p>Currently it simplifies rewriting user stories and verification, in near future it is to receive form fields implementation to fill most common types of fields and actions such as login and logout.</p><h1>How to use it</h1><p>See <a href="example.html">example</a> for more details.</p>
+            <h1>Example</h1><p>A simple user story:</p>
+<blockquote><p>User John Doe enters administration site, logs in and publishes new article.</p>
+</blockquote><p>would be transformed as follows:</p>
+<div class="source"><pre class="prettyprint">new Story(webdriver, &quot;http://www.example.com/admin&quot;)  
+  .perform(new LoginAction(&quot;jdoe&quot;, &quot;password&quot;)  
+  .ready()  
+  .click(By.xpath(&quot;a[text()='Create article']&quot;))  
+  .ready()  
+  .perform(new CreateArticleAction())  
+  .ready()  
+  .verify(new Story.Verification() {  
+    public void verify(WebDriver driver) {  
+      // perform verification that article was created succesfully  
+    }  
+  });
+</pre></div>
                   </div>
             </div>
           </div>
