@@ -28,3 +28,34 @@ would be transformed as follows:
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;// perform verification that article was created succesfully  
 > &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}  
 > &nbsp;&nbsp;&nbsp;&nbsp;});
+
+
+
+Most of the UI tests come down to filling forms. Stories offer simple way not only to handle and submit them, but also to extend them to your own implementation.
+
+To create new form you will need a WebDriver instance and selector for the form.
+
+Form form = new Form(driver, By.xpath("form[@id='login']"));
+
+To operate basic elements you will need name of the field and perform appropriate action on the form instance. 
+
+form.type(fieldname, text);
+
+form.check(fieldname); // single checkbox
+form.uncheck(fieldname); // single checkbox
+
+form.check(fieldname, value); // group of checkboxes or radio buttons
+form.uncheck(fieldname, value); // group of checkboxes
+
+form.select(fieldname, option);
+
+form.click(By); // to test label connections to right fields or to click on form button
+
+form.submit(); // submit by using first submit button available
+form.submit(name); // submit by submit button name;
+
+form.reset(); // reset form using form reset button if available otherwise throws exception
+
+form.field(By, Class<? extends AbstractField>); // retrieve special implementation of the form field
+
+
